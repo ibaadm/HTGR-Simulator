@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "HTGR-SIMULATOR"
+version = "0.1.0"
+description = "HTGR Simulation for Net CO2 Reduction"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "scipy",
+    "pandas",
+    "iapws"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
