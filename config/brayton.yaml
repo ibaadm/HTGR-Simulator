@@ -1,0 +1,12 @@
+# BRAYTON CYCLE (HELIUM)
+design_point:
+  pressure_ratio: 2.0       # Helium turbines use lower ratios than air
+  mass_flow_rate: 12.7      # kg/s (Matches Reactor 30MW / Delta T)
+
+efficiencies:
+  compressor: 0.88
+  turbine: 0.92
+
+physics:
+  gamma: 1.66               # Helium (Monatomic)
+  cp_gas: 5195.0            # Specific Heat of Helium (J/kgK)

@@ -1,0 +1,8 @@
+# HTGR CORE CONFIGURATION
+design_specs:
+  nominal_thermal_power_mw: 30.0
+  
+thermodynamics:
+  target_outlet_temp_c: 850.0
+  inlet_temperature_c: 395.0
+  coolant_gas: "helium"
