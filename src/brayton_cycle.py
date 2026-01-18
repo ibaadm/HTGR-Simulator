@@ -5,6 +5,7 @@ class BraytonCycle:
     
     def __init__(self, config_dict):
         self.gamma = config_dict.get('physics', {}).get('gamma', 1.66)
+        self.gen_eff = config_dict.get('physics', {}).get('generator_efficiency', 0.98)
 
     def get_efficiency(self, pressure_ratio: float | np.ndarray) -> float | np.ndarray:
         """Calculate ideal thermal efficiency."""
@@ -19,10 +20,8 @@ class BraytonCycle:
         Calculates both the power generated and the heat remaining.
         Follows the First Law: Q_in = Work + Q_exhaust
         """
-        # Mechanical/Electrical losses (e.g., 98% generator efficiency)
-        loss_factor = 0.98 
         
-        work_out = thermal_power_in * efficiency * loss_factor
+        work_out = thermal_power_in * efficiency * self.gen_eff
         heat_exhaust = thermal_power_in - work_out
         
         return work_out, heat_exhaust

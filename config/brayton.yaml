@@ -6,7 +6,9 @@ efficiencies:
   compressor: 0.88
   turbine: 0.92
 
-# Helium
 physics:
+  # Helium
   gamma: 1.66
   cp_gas: 5195.0
+  
+  generator_efficiency: 0.98
