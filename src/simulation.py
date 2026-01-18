@@ -102,7 +102,3 @@ class PlantModel:
 
         print(f"Total Energy Generated: {self.total_energy_produced_mwh:.2f} MWh")
         print(f"Average Net Power: {df['Net_Power_MW'].mean():.2f} MW")
-
-if __name__ == "__main__":
-    sim = PlantModel()
-    sim.run()
