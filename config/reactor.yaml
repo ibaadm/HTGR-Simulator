@@ -1,4 +1,3 @@
-# HTGR CORE CONFIGURATION
 design_specs:
   nominal_thermal_power_mw: 30.0
   

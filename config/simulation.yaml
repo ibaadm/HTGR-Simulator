@@ -1,8 +1,10 @@
-# SIMULATION SETTINGS
 time_settings:
   start_time: 0.0
-  duration: 86400.0   # 24 Hours (in seconds)
-  dt: 1.0             # Calculate every 1 second
+  duration: 86400.0
+  dt: 1.0
+
+heat_rejection:
+  parasitic_fraction: 0.01
 
 logging:
   save_to_csv: true

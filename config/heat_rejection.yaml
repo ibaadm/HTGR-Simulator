@@ -1,6 +1,0 @@
-# HEAT REJECTION SYSTEM (Water Independent)
-# Subtask 2 Configuration
-
-constraints:
-  # COMPETITION RULE: Parasitic load is 1% of rejected heat
-  parasitic_power_fraction: 0.01

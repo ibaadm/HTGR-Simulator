@@ -1,11 +1,7 @@
-# RANKINE CYCLE (STEAM)
-# Bottoming cycle configuration
-
 steam_parameters:
-  boiler_pressure_mpa: 10.0    # 100 Bar
-  pinch_point_delta_t: 30.0    # Gas must be 30C hotter than steam
-  
-  # COMPETITION RULE: Fixed bottom temperature
+  boiler_pressure_mpa: 10.0
+  pinch_point_delta_t: 30.0
+
   condenser_temp_c: 50.0       
 
 efficiencies:
