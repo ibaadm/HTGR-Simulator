@@ -1,0 +1,6 @@
+test_id,power_mw,inlet_temp_c,outlet_temp_c,mass_flow_kg_s,notes
+HTTR_Rated_30MW,30.0,395.0,850.0,12.7,"Rated Operation (JAERI)"
+HTTR_High_Temp_Test,30.0,395.0,950.0,10.2,"High Temp Test Mode"
+HTTR_Partial_20MW,20.0,395.0,750.0,12.7,"Partial Load (Constant Flow)"
+HTTR_Partial_10MW,10.0,395.0,650.0,12.7,"Low Load (Constant Flow)"
+HTTR_Startup_Low,9.0,320.0,400.0,12.0,"Startup Phase"
