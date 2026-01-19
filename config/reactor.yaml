@@ -5,3 +5,4 @@ thermodynamics:
   target_outlet_temp_c: 850.0
   inlet_temperature_c: 395.0
   specific_heat_helium_j_kg_k: 5195.0
+  thermal_time_constant_seconds: 1200.0
