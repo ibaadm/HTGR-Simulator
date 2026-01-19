@@ -15,5 +15,14 @@ dependencies = [
     "PyYAML"
 ]
 
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8"
+]
+
+[tool.black]
+line-length = 79
+
 [tool.setuptools.packages.find]
 where = ["."]
