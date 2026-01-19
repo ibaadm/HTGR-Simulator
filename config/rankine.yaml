@@ -1,9 +1,7 @@
 steam_parameters:
   boiler_pressure_mpa: 10.0
   pinch_point_delta_t: 30.0
-
   condenser_temp_c: 50.0       
 
 efficiencies:
   turbine: 0.85
-  pump: 0.85

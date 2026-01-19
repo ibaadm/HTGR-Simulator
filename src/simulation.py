@@ -28,7 +28,7 @@ class PlantModel:
 
         self.core = HTGRCore(self.reactor_cfg)
         self.brayton = BraytonCycle(self.brayton_cfg)
-        self.rankine = RankineCycle()
+        self.rankine = RankineCycle(self.rankine_cfg)
 
         self.current_time = 0.0
         self.total_energy_produced_mwh = 0.0
