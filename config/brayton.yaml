@@ -12,3 +12,4 @@ physics:
   cp_gas: 5195.0
   
   generator_efficiency: 0.98
+  expansion_recovery_factor: 0.90

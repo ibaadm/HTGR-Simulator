@@ -13,6 +13,10 @@ class BraytonCycle:
         exponent = (self.gamma - 1) / self.gamma
         self.thermal_eff = 1 - (1 / p_ratio**exponent)
 
+        self.recovery_factor = config_dict.get("physics", {}).get(
+            "expansion_recovery_factor", 0.90
+        )
+
     def calculate_performance(
         self, thermal_power_in: float
     ) -> tuple[float, float]:
@@ -25,3 +29,10 @@ class BraytonCycle:
         heat_exhaust = thermal_power_in - work_out
 
         return work_out, heat_exhaust
+
+    def calculate_exhaust_temp(self, t_outlet_c: float) -> float:
+        """
+        Calculates the gas temperature leaving the turbine.
+        Formula: T_exhaust = T_inlet * (1 - η_thermal * recovery_factor)
+        """
+        return t_outlet_c * (1 - self.thermal_eff * self.recovery_factor)

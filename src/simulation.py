@@ -70,7 +70,7 @@ class PlantModel:
             p_gas_mw, q_exhaust_mw = self.brayton.calculate_performance(
                 q_core_mw
             )
-            t_exhaust_c = t_outlet_c * (1 - self.brayton.thermal_eff * 0.90)
+            t_exhaust_c = self.brayton.calculate_exhaust_temp(t_outlet_c)
 
             p_steam_mw, q_waste_mw = self.rankine.calculate_output(
                 heat_input_mw=q_exhaust_mw, gas_exhaust_temp_c=t_exhaust_c
