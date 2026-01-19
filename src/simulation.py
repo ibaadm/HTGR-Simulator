@@ -58,7 +58,7 @@ class PlantModel:
         for t in range(int(duration)):
             self.current_time = t
 
-            q_core_mw, t_outlet_c = self.core.get_thermal_stats(time=t)
+            q_core_mw, t_outlet_c, m_flow_kg_s = self.core.get_thermal_stats(time=t)
 
             p_ratio = self.brayton_cfg['design_point']['pressure_ratio']
             eta_gas = self.brayton.get_efficiency(p_ratio)
@@ -78,6 +78,7 @@ class PlantModel:
                 "Time": t,
                 "Reactor_Power_MW": q_core_mw,
                 "Reactor_Temp_C": t_outlet_c,
+                "Mass_Flow_kg_s": m_flow_kg_s,
                 "Brayton_Power_MW": p_gas_mw,
                 "Rankine_Power_MW": p_steam_mw,
                 "Parasitic_Load_MW": p_fan_mw,

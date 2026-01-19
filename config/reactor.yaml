@@ -4,4 +4,4 @@ design_specs:
 thermodynamics:
   target_outlet_temp_c: 850.0
   inlet_temperature_c: 395.0
-  coolant_gas: "helium"
+  specific_heat_helium_j_kg_k: 5195.0
