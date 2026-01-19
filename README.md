@@ -39,7 +39,7 @@ Any final leftover heat is rejected through a cooling system, which incurs a sma
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/ibaadm/HTGR-Simulator.git](https://github.com/ibaadm/HTGR-Simulator.git)
+    git clone https://github.com/ibaadm/HTGR-Simulator.git
     cd HTGR-Simulator
     ```
 
