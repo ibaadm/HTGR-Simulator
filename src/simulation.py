@@ -51,11 +51,11 @@ class PlantModel:
 
         settings = self.sim_cfg.get('time_settings', {})
         duration = settings.get('duration', 86400)
-        dt = settings.get('dt', 1.0)
+        dt = settings.get('dt', 10.0)
 
         print(f"--- Starting Transient Simulation ({duration}s) ---")
 
-        for t in range(int(duration)):
+        for t in range(0, int(duration), int(dt)):
             self.current_time = t
 
             q_core_mw, t_outlet_c, m_flow_kg_s = self.core.get_thermal_stats(time=t)
