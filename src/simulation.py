@@ -33,7 +33,6 @@ class PlantModel:
         self.brayton = BraytonCycle(self.brayton_cfg)
         self.rankine = RankineCycle(self.rankine_cfg)
 
-        self.current_time = 0.0
         self.total_energy_produced_mwh = 0.0
 
     def _load_yaml(self, filename: str) -> dict:
@@ -61,8 +60,6 @@ class PlantModel:
         print(f"--- Starting Transient Simulation ({duration}s) ---")
 
         for t in range(0, int(duration), int(dt)):
-            self.current_time = t
-
             q_core_mw, t_outlet_c, m_flow_kg_s = self.core.get_thermal_stats(
                 time=t
             )
