@@ -64,18 +64,18 @@ class PlantModel:
                 time=t
             )
 
-            p_gas_mw, q_exhaust_mw, t_exhaust_c = (
+            p_brayton_mw, q_exhaust_mw, t_exhaust_c = (
                 self.brayton.calculate_output(
                     thermal_power_in=q_core_mw, t_inlet_c=t_outlet_c
                 )
             )
 
-            p_steam_mw, q_waste_mw = self.rankine.calculate_output(
+            p_rankine_mw, q_waste_mw = self.rankine.calculate_output(
                 heat_input_mw=q_exhaust_mw, gas_exhaust_temp_c=t_exhaust_c
             )
 
-            p_fan_mw = q_waste_mw * self.fan_penalty
-            p_net_mw = p_gas_mw + p_steam_mw - p_fan_mw
+            p_parasitic_mw = q_waste_mw * self.fan_penalty
+            p_net_mw = p_brayton_mw + p_rankine_mw - p_parasitic_mw
             self.total_energy_produced_mwh += p_net_mw * (dt / 3600.0)
 
             self.results.append(
@@ -84,9 +84,9 @@ class PlantModel:
                     "Reactor_Power_MW": q_core_mw,
                     "Reactor_Temp_C": t_outlet_c,
                     "Mass_Flow_kg_s": m_flow_kg_s,
-                    "Brayton_Power_MW": p_gas_mw,
-                    "Rankine_Power_MW": p_steam_mw,
-                    "Parasitic_Load_MW": p_fan_mw,
+                    "Brayton_Power_MW": p_brayton_mw,
+                    "Rankine_Power_MW": p_rankine_mw,
+                    "Parasitic_Load_MW": p_parasitic_mw,
                     "Net_Power_MW": p_net_mw,
                     "System_Efficiency": (
                         p_net_mw / q_core_mw if q_core_mw > 0 else 0
