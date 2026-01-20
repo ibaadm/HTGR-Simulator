@@ -17,22 +17,17 @@ class BraytonCycle:
             "expansion_recovery_factor", 0.90
         )
 
-    def calculate_performance(
-        self, thermal_power_in: float
-    ) -> tuple[float, float]:
+    def calculate_output(
+        self, thermal_power_in: float, t_inlet_c: float
+    ) -> tuple[float, float, float]:
         """
-        Calculates both the power generated and the heat remaining.
-        Follows the First Law: Q_in = Work + Q_exhaust
+        Calculates power generated, heat remaining, and exhaust temperature.
+        Follows the First Law (Q_in = Work + Q_exhaust) and expansion physics.
         """
 
         work_out = thermal_power_in * self.thermal_eff * self.gen_eff
         heat_exhaust = thermal_power_in - work_out
 
-        return work_out, heat_exhaust
+        t_exhaust = t_inlet_c * (1 - self.thermal_eff * self.recovery_factor)
 
-    def calculate_exhaust_temp(self, t_outlet_c: float) -> float:
-        """
-        Calculates the gas temperature leaving the turbine.
-        Formula: T_exhaust = T_inlet * (1 - η_thermal * recovery_factor)
-        """
-        return t_outlet_c * (1 - self.thermal_eff * self.recovery_factor)
+        return work_out, heat_exhaust, t_exhaust
