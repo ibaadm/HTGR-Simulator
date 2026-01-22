@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "HTGR-SIMULATOR"
-version = "0.1.0"
+version = "1.0"
 description = "HTGR Simulation for Net CO2 Reduction"
 dependencies = [
     "numpy",
