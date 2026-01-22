@@ -1,6 +1,5 @@
 design_point:
   pressure_ratio: 2.0
-  mass_flow_rate: 12.7
 
 efficiencies:
   compressor: 0.88
